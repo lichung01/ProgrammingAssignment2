@@ -7,14 +7,14 @@
 ##  Function makeCacheMatrix will use a list of functions below to create special matrix objects.
 ##  (1) functions to get and set the value of the matrix
 ##  (2) functions to getInv and setInv the value of the inverse matrix
-##  (3) functions to getPrevInv and setPrevInv the value of the previous inverse matrix
+##  (3) functions to getPrevx and setPrevx the value of the previous inverse matrix
 
 makeCacheMatrix <- function(x = matrix()) {
     ## Assign NULL to matrixInv in local env
     matrixInv <- NULL
     matrixPrevx <- NULL
     
-    ##set function  for x and matrixInv in global env
+    ##set function  for x, matrixInv and matrixPrevx in global env
     set <- function(y) {
         x <<- y
         matrixInv <<- NULL
@@ -28,9 +28,9 @@ makeCacheMatrix <- function(x = matrix()) {
     ##  getInv function to return maxtrixInv
     getInv <- function() matrixInv
     
-    ## setPrevInv function for inverse matrix in global env
+    ## setPrevx function for matrix in global env
     setPrevx <- function(Prevx) matrixPrevx <<- Prevx
-    ##  getPrevInv function to return maxtrixInv
+    ##  getPrevx function to return maxtrixPrevx
     getPrevx <- function() matrixPrevx
     
     
